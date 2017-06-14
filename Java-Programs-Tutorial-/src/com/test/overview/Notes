@@ -1,0 +1,19 @@
+James Gosling initiated Java language project in June 1991(OAK->Green->Java)
+
+Write Once Run Anywhere
+
+Features
+Open Source-we can view the development code of JDK
+Object Oriented-inheritance,polymorphism, encapsulation,abstraction
+Platform Independent-Write Once Run Anywhere
+Simple-No pointers,templates are removed
+Secure-Class Loader,Byte Code Converter,Security Manager
+Architecture-neutral-memory allocation on any platform is same size unlike C
+Portable-because platform independency we can change one to another platform
+Robust-Memory HAndling,Exception Handling
+Multithreaded-for gaming applications
+High Performance-JIT compiler
+Distributed-Web based or desktop(zoom app)
+Dynamic-adapt to evolving environment can carry extensive amount of runtime info
+
+
