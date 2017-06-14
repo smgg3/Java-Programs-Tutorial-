@@ -1,0 +1,94 @@
+->Object - Objects have states and behaviors. Example: A dog has states - color,
+name, breed as well as behavior such as wagging their tail, barking, eating. An
+object is an instance of a class.
+->Class - A class can be defined as a template/blueprint that describes the
+behavior/state that the object of its type supports.
+->Methods - A method is basically a behavior. A class can contain many methods.
+It is in methods where the logics are written, data is manipulated and all the
+actions are executed.
+->Instance Variables - Each object has its unique set of instance variables. An
+object's state is created by the values assigned to these instance variables.
+
+
+Tips about JAVA:
+	case sensitive
+	Class Names-Upper case for every Word
+	Method Names-start with lower case but every other work with upper case
+	Program file name-match with class name
+	every java program starts from main method
+	java components class,method,variable,interface names we call as idetifiers
+identifiers
+	All identifiers should begin with a letter (A to Z or a to z), currency character ($) or an underscore (_).
+	After the first character, identifiers can have any combination of characters.
+	A key word cannot be used as an identifier.
+	Most importantly, identifiers are case sensitive
+Java Modifiers
+	Access Modifiers-default,public,private,protected
+	Non-Access modifiers-final,abstract,strictfp
+Java Variables
+	Static or Class variables
+	Non static or instance variables
+	local variables
+Java Arrays
+	list of same type of data
+Java Enums from 1.5 onwards
+	restrict variable to have only one of only a few predefined values.The values in the enumarated lists are called enums
+	we can reduce no.of bugs
+Java Keywords
+class
+public
+private
+protected
+final
+static
+abstract
+strictfp
+int
+String
+char
+boolean
+large
+short
+double
+float
+if
+else
+switch
+goto
+for
+while
+do
+instance of
+transient
+synchronized
+enum
+case
+return
+native		
+import
+package
+throws
+throw
+volatile
+extends
+implements
+const
+continue
+break
+finally
+try
+catch
+new
+this
+super
+default
+interface
+void
+
+Java Comments
+	/**/
+	//
+	/*
+	*
+	*
+	*/
