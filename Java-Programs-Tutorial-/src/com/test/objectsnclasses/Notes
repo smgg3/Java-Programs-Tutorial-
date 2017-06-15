@@ -1,0 +1,54 @@
+OOPs supports
+	Polymorphism
+	Inheritance
+	Encapsulation
+	Abstraction
+	Classes
+	Objects
+	Instance
+	Method
+	Message Parsing
+->Object 
+	- Objects have states and behaviors. Example: A dog has states - color,
+name, breed as well as behaviors – wagging the tail, barking, eating. An object is
+an instance of a class.
+->Class 
+	- A class can be defined as a template/blueprint that describes the
+behavior/state that the object of its type support
+Local variables: 
+	Variables defined inside methods, constructors or blocks are called local variables. The variable will be declared and
+	initialized within the method and the variable will be destroyed when the method has completed.
+Instance variables: 
+	Instance variables are variables within a class but outside any method. These variables are initialized when the class
+	 is instantiated. Instance variables can be accessed from inside any method, constructor or blocks of that particular class.
+Class variables: 
+	Class variables are variables declared within a class, outside any method, with the static keyword.
+Constructor
+	Every class has default constructor with same as class name.
+	Java supports Singleton classes where you would be able to create only one instance of the class.
+Singleton Class
+	controls object creation limiting to one.
+	any instance fields of a Singleton will occur only once per class, just like static fields. Singletons often control access to resources,
+	such as database connections or sockets.
+	For example, if you have a license for only one connection for your database or your JDBC driver has trouble with 
+	multithreading, the Singleton makes sure that only one connection is made or that only one thread can access the connection at a time.
+Creating an Object
+	There are three steps when creating an object from a class:
+		Declaration: A variable declaration with a variable name with an object type.
+		Instantiation: The 'new' keyword is used to create the object.
+		Initialization: The 'new' keyword is followed by a call to a constructor. This call initializes the new object
+AccessingInstance Variables and Methods
+	Instanced variables and methods are accessed via created objects. 
+Source File Declaration Rules
+	There can be only one public class per source file.
+	A source file can have multiple non-public classes.
+	The public class name should be the name of the source file as well which should be appended by .java at the end. For example: the class name is public class
+	Employee{} then the source file should be as Employee.java.
+	If the class is defined inside a package, then the package statement should be the
+	first statement in the source file.
+	If import statements are present, then they must be written between the package statement and the class declaration. If there are no package statements, then the
+	import statement should be the first line in the source file.
+	Import and package statements will imply to all the classes present in the source file. It is not possible to declare different import and/or package statements to
+	different classes in the source file.
+Java Package
+	In simple words, it is a way of categorizing the classes and interfaces
