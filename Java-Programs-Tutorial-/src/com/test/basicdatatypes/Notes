@@ -1,0 +1,65 @@
+Variables are nothing but reserved memory locations to store values.
+Two types
+	Primitive	-predefined by the language and keyword
+	Reference /Object-
+Primitive Datatypes
+byte
+	1 byte
+	8 bit signed 2's complement number(-128 to 127)
+	default is 0
+	pro
+		used to save space in large arrays
+short
+	2bytes
+	16 bit signed 2's complement number(-32,768 to 32,767)
+	default is 0
+	pro
+		used to save space in large arrays
+long
+	8 bytes
+	 64 bit signed 2's complement number(-2^63 to 2^63-1)
+	 default is 0L
+int
+	4 bytes
+	 32 bit signed 2's complement number(-2^31 to 2^31-1)
+	 default datatype for integral values
+	 default is 0
+float
+	4 bytes
+	single precision 32-bit IEEE 754 floating point
+	used to save memory in large arrays of floating values
+	never used for precise values such as currency
+	default value is 0.0f
+double
+	8 bytes
+	double precision 64-bit IEEE 754 floating point
+	defualt datatype for decimal values
+	never be used for precise values such as currency
+	default is 0.0d
+char
+	2 bytes
+	16 bit Unicode chracter
+	min value is\u0000
+	max is \uffff
+boolean
+	1 bit
+	true/false
+	used for flags to track contiditions
+	default value is false
+Reference Variables
+	are created using defined constructors of the classes
+	Ex: class objects and arrays of specific type
+	default value is null
+
+Literals
+	it is a source code representation of a fixed value.
+special escape sequences
+	\n-newline
+	\r carriage return
+	\f form feed
+	\b back space
+	\s space
+	\t tab
+	\uxxxx unicode
+	\ddd octal
+	
