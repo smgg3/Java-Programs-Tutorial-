@@ -1,0 +1,25 @@
+Loop Control
+	loop statement allows us to execute a statement or group of statements multiple times
+Types of loops
+	While
+		runs till the given condition is false
+	for loop 
+		runs multiple times and abbreviates the loop control variables
+	do while
+		runs till the condition is true but chcecks the conditions at the end of the llop body execution every time
+loop controls
+	break
+		terminates the loop or switch and transfers the execution to the stament that is immediate to the loop or switch
+	continue
+		causes a loop to skip the remainder of its body and immediately retest its condition proir to reiterating
+		in a while loop control goes to boolean statement
+		in a for loop control goes to update statement
+Enhanced For loop
+	for(declaration : expression)
+		declaration
+			newly declared variable which is compatible to the value of array
+			scope is loop
+			and value is same as array element
+		expression
+			it is a array variable or a method that return a compatible array having values compatible with declaration
+			

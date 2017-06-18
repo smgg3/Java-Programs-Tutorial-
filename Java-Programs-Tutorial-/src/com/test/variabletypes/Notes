@@ -1,0 +1,47 @@
+Variable
+	provides a named storage that our programs can manipulate.
+	has type,size,layout of memory,range,set of operations possible
+3 types of variables
+	Local
+	instance/non static
+	class/static
+Local Variables
+	in section(methods, constructors,blocks)
+	created once we enter its section and destroyed once we exits it
+	we can't apply access modifiers
+	visible with in section
+	implemented internally at stack level
+	no default value should be declared before first use
+Instance Variables/non static
+	in class but outside section
+	when space is allocated for an object in heap, a slot for each instance variable will be created
+	when we create an object using new keyword instance variables will be created and destroyed when the object is destroyed
+	holds values referenced by more than one section and are objects states should present through out the class
+	declared class level before or after use
+	access modifiers allowed
+	visible to all sections
+	default values for numbers 0, boolean false, object null(values can be assigned during the declaration or in the constructor)
+	accessed directly within the class by calling name. Within static method they should be called using fully qualified name i.e objectreference.variablename
+	we use getters and setters for settings	
+	only we can give public,protected,private,default,static,volatile,final,transient
+Static variables/Class variables
+	declared with static keyword
+	would only be one copy class variable per class regardles of how many static objects we create
+	rarely used other than being used as constants(are public/private static final never change from their initial values)
+	created when program starts and destroyed when program ends
+	values can be initialized in static blocks
+	accessed by calling using class name classname.variablename
+	if static variable is constant i.e as public/private final then variable name should be capital letters
+	we can't use non static instance variables in static sections directly 
+	if you want to use non static in static use object reference
+	only we can give public,protected,private,default,static,volatile,final,transient
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

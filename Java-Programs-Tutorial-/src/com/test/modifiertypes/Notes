@@ -1,0 +1,92 @@
+Modifiers
+	are keywords that we add to definitions to change their meaning
+	two type
+	-->access modifiers
+	-->non access modifiers
+Access Modifiers
+	default--only to package
+	private- only class
+	public- to every class
+	protected - to package and sub classes
+Default
+	no need to declare explicitly
+**********
+Interface
+	by default fields are public static final 
+	by default methods are public
+	we can't assign access modifiers to interface
+**********	
+Methods
+	only we can define final variables we can't assign any thing like modifiers are static
+Private
+	we can add to methods,constructors,variables but not to class
+	access these using public getter methods
+	using private modifier is the main way that an object encapsulates itself and hides data from outside the world.
+	private variables are not inherited by subclasses
+Public
+	class,method,constructor,interface,fields,blocks
+	can be accessed by anyone
+	we need to import class if it is in another package
+	in inheritance all public methods and variables can be inherited
+Protected
+	methods,variables,constructor not class or blocks
+	classes in it's package or subclasses from other packages can access it
+parent to sub class
+	private->default->protected->public
+
+**************
+Non static Modifiers
+	static  class methods and variables
+	final for finalizing class, methods, variables
+	abstract for methods and class
+	synchronized and volatile used for threads
+	
+Static modifiers
+	Static variables
+		only one copy for all instances of class also called as class variables
+		can't assign static to local variables
+	Static methods
+		exist independently of any instances created for the class
+		don't use any instance variables of any object of the class they are defined in
+		tale all the data from parameters and compute something from those with nor eference to variables
+		accessed like Classname.variablename/method from outside the class
+Final Modifiers
+	class , variable,method,object
+	can be initialized explicitly once
+	reference variable declared final can never be reassigned to refer to an different 	object
+	but the states of an object can be changed
+	final method can't be overridden in subclasses(because outsider can't change the content of method)
+	final variable can't be initialized again
+	final class dont have subclass ex: String(useful to create immutable class and objects)
+Abstract Modifiers
+	Abstract Class
+		never be instantiated
+		purpose is to extend it
+		can't be abstract and final
+		if it contains abstract methods we need to define it ass abstract class otherwise compiler will throw error
+		we can make class as abstract with abstract and normal methods or only with abstract methods or only with normal methods
+	Abstract Method
+		declared with out implementation
+		method body provided by the subclass
+		can never be final or strict
+		subclass must implement these methods unless subclass is also a abstract class
+		 Example: public abstract sample();
+Synchronized Modifier
+	used to control access over methods
+	if synchronized keyword used for a method only one thread can access the method at a time
+	can be applied to any four access modifiers
+Transient Modifier
+	to indicate the JVM to skip the particular variable while serializing the object containing it
+	we keep it before class type or data type
+	only to class level variables
+Volatile Modifier
+	let the JVM know that a thread accessing the variable must always merge its own private copy of the variable with the master copy in the memory
+	accessing a volatile variable synchronizes all the cached copied of the variables in the main memory.
+	volatile can only be applied to instance variables which are of type object or private
+	volatile object reference can be null
+	
+	 
+	
+	
+		
+	

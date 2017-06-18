@@ -1,0 +1,83 @@
+Basic Operators
+	Arithmetic Operators
+		addition
+		subtract
+		multiply]
+		division
+		modulus
+		increment
+		decrement
+	Relational Operators
+		equal(==)
+		not equal(!=)
+		greater than 
+		less than
+		greater than or equal
+		less than or equal
+	Bitwise Operators
+		applied to long int short byte char
+		| or
+		& and
+		^ bitwise XOR
+		~ bitwise compliment
+		<<  left shift
+		>> right shift
+		>>> zero fill right shift
+	Logical Opearators
+		&&
+		||
+		!
+	Assignment Operators
+		=
+		+=
+		-=
+		*=
+		/=
+		%=
+		<<=
+		>>=
+		&=
+		|=
+		^=
+	Miscellaneous Operators
+		Conditional Operators (?:) ternary operator
+		instanceof operator
+			(object reference variable) instanceof (class/interface type)
+			it is a IS-A  relationship
+			it returns true if the object being compared is the assignment compatible with the type on the right
+			Ex: 
+			Operators obj=new MiscellaneousOperators();
+		
+			boolean e=obj instanceof Operators;
+		
+			boolean f=obj instanceof MiscellaneousOperators;   
+Precedence of JAVA Operators
+	postfix  
+		()[] . left to right
+	unary	
+		++ -- ! ~ right to left
+	multiplicative
+		* / %  left to right
+	additive
+		+ -   left to right
+	shift
+		<< >> 	>>> left to right
+	relational 
+		>= <= > <  left to right
+	equality
+		== !=    left to right
+	bitwise and
+		&        left to right
+	bitwise or
+		|        left to right
+	bitwise xor
+		^        left to right
+	logical and 
+		&&        left to right
+	logical or
+		||        left to right
+	conditional 
+		?: 			right to left
+	assignment
+		= += -= *= /= ^= ~= &= |= %= <<= >>=  right to left
+	

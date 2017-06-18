@@ -1,0 +1,53 @@
+Character Class
+	char ch='a'
+	char uniChar='\u039A'
+	char[] array={'a','b','c','d','e'}
+But we come across some situations where we need Wrappaer Classes Character
+Character ch=new Character('a')
+if you send a primitive type to a method expecting an object then the compiler automatically does autoboxing and unboxing vice versa
+Escape Sequences
+\n,\b,\t,\r,\f
+Character Methods
+	1.isLetter()
+		syntax
+			boolean isLetter(char ch)
+		This method returns true if the passed character is really a character.
+		Character.isLetter('c')true
+		Character.isLetter('5')false
+	2.isDigit()
+		syntax
+			boolean isDigit(char ch)
+		This method returns true if the passed character is digit.
+		Character.isDigit('5')
+	3.isWhitespace()
+		The method determines whether the specified char value is a white space, which includes space, tab, or new line.
+		syntax
+			boolean isWhitespace(char ch)
+		This method returns true if the character passed id whitespace
+		Character.isWhitespace(' ')('\t')('\n')
+	4.isUpperCase()
+		syntax
+			boolean isUpperCase(char ch)
+		This method returns true if the passed character is uppercase
+		Character.isUpperCase('A')
+	5.isLowerCase()
+		syntax
+			boolean isLowerCase(char ch)
+		This method returns true if the passed character is lowercase
+		Character.isLowerCase('a');
+	6.toUpperCase()
+		syntax
+			char toUpperCase(char ch)
+		This method returns uppercase char of the passed character
+		Character.toUpperCase('a')
+	7.toLowerCase()
+		syntax
+			char toLowerCase(char ch)
+		This method returns lowercase char of the passed character
+		Character.toLowerCase('A')
+	8.toString()
+		syntax
+			String toString(char ch)
+		This method returns string of the passed character
+		Character.toString('a')
+	
