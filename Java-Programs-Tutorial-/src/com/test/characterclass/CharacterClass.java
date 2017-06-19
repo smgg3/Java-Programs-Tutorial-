@@ -40,6 +40,11 @@ public class CharacterClass {
 		//toString()
 		System.out.println(Character.toString('a'));
 		System.out.println(Character.toString('a') instanceof String);
+		
+		//isAlphabetic()
+		System.out.println(Character.isAlphabetic('2'));
+		
+		
 	}
 
 }

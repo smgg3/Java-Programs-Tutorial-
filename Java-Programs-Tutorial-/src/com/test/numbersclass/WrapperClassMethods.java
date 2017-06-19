@@ -1,5 +1,7 @@
 package com.test.numbersclass;
 
+import java.util.Random;
+
 public class WrapperClassMethods {
 
 	public static void main(String[] args) {
@@ -91,6 +93,10 @@ public class WrapperClassMethods {
 		
 		//random()
 		System.out.println(Math.random());
+		
+		Random r=new Random();
+		int n=r.nextInt(10);
+		System.out.println(n);
 	}
 
 }
