@@ -175,21 +175,7 @@ public class StringClassMathods {
 		System.out.println("  Hello  ".trim());
 		
 		//valueOf()
-		System.out.println(String.valueOf(1.3f));
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		System.out.println(String.valueOf(1.3f));	
 	}
 
 }
