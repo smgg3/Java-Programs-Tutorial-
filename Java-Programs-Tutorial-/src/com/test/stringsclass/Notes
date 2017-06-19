@@ -1,0 +1,377 @@
+Strings Class
+	sequence of characters
+	it is an object
+	java provides String class to create and manipulate strings
+	String s="Hello World"  compiler creates String object if it encounters a string literal
+	String s=new String(char array)
+	String s=new String("hello")
+	Sting s=new String() empty string
+String Buffer and String Builder
+	are used when there is a lot of necessity to make modifications on Strings of characters
+	unlike string, objects of these classes can be modified over and over again with out leaving behind a lot of new unused objects
+	Methods
+		1.append()
+			method update the value of the object that invokes the method. The method takes boolean,char,int,float,long,String,StringBuilder,char list,object,StringBuffer object
+			syntax
+				public StringBuffer append(boolean b)
+				public StringBuffer append(char c)
+				public StringBuffer append(char[] str)
+				public StringBuffer append(char[] str, int offset, int len)
+				public StringBuffer append(double d)
+				public StringBuffer append(float f)
+				public StringBuffer append(int i)
+				public StringBuffer append(long l)
+				public StringBuffer append(Object obj)
+				public StringBuffer append(StringBuffer sb)
+				public StringBuffer append(String str)
+			This method return the updated SringBuffer Objects
+			StringBuffer s=new StrinfBuffer("Hello");
+			s.append("World");
+		2.reverse()
+			method reverses the value of the StringBuffer object that invoked the method.
+			syntax
+				public StringBuffer reverse()
+			This method returns the reversed sequence of the StringBuffer object value	
+			s.reverse()
+		3.delete()
+			syntax
+				public StringBuffer delete(int start, int end)
+			method deletes the substring from string start(inclusive) to end(exclusive)
+			This method returns the remaining string after deleting from start to end
+			s.delete(4,8)
+		4.insert()
+			this method inserts the values at the offset to string length and remaining of StringBufer will be added at last
+			syntax
+				public StringBuffer insert(int offset, boolean b)
+				public StringBuffer insert(int offset, char c)
+				public insert(int offset, char[] str)
+				public StringBuffer insert(int index, char[] str,int offset, int len)
+				public StringBuffer insert(int offset, float f)
+				public StringBuffer insert(int offset, int i)
+				public StringBuffer insert(int offset, long l)
+				public StringBuffer insert(int offset, Object obj)
+				public StringBuffer insert(int offset, String str)
+			This method returns the StringBuffer after inserting the values that we passed at the offset position
+			s.insert(3,"Hello")
+		5.replace()
+			This method replaces the StringBuffer object value that invoked the methods with given string from start to end
+			syntax
+				public StringBuffer replace(int start, int end, String str)
+			this returns the StringBuffer after replacing it with given string
+			s.replace(2,5,"hi")
+		6.capacity()
+			syntax
+				int capacity()
+			returns the current capacity of the StingBuffer
+		7.charAt()
+			syntax
+				char charAt(int index)
+			returns char at the given index
+			s.charAt(2)
+		8.getChars()
+			syntax
+				void getChars(int srcBegin,int srcEnd,char[] dst,int dstBegin)
+			Characters are copied from this string buffer into the destination character array dst
+			s.getChars(2,5,chararray,2);
+		9.indexOf()
+			syntax
+				int indexOf(String str)
+			returns the index of the str starting index if the substring str matches in the  invoked string
+			s.indexOf("llo");
+		10.indexOf()
+			syntax
+				int indexOf(String str,int fromIndex)
+			Returns the index within this string of the first occurrence of the specified substring, starting at the specified index			
+			s.indexOf("l",3)
+		11.lastIndexOf()
+			syntax
+				int lastIndexOf(String str)
+			Returns the index within this string of the rightmost occurrence of the specified substring.
+			s.lastIndexOf("l")
+		12.lastIndexOf()
+			syntax
+				int lastIndexOf(String str,int fromIndex)
+			Returns the index within this string of the last occurrence of the specified substring.	
+			s.lastIndexOf("l",1)
+		13.length()
+			syntax
+				int length(String str)
+			Returns the length (character count) of this string buffer
+			s.length()
+		14.setCharat()
+			syntax
+				void setCharAt(int index,char ch)
+			The character at the specified index of this string buffer is set to ch
+		15.setLength()
+			syntax
+				void setLength(int newLength)
+			This sets the length of the string Buffer
+			s.setLength(10);
+		16.subSequence()
+			syntax
+				CharSequence subSequence(int start,int end)
+			returns a new char sequence that is a subsequence of this sequence
+			s.subSequence(4,8)
+		17.substring()
+			syntax
+				String substring(int start)
+			Returns a new string starts at the given string and till the String Buffer end
+			s.substring(2)
+		18.substring()
+			syntax
+				String substring(int start,int end)
+			Returns new string which is substring of the invoked string buffer from start inclusive to end exclusive
+			 s.substring(2,4)
+		19.toString()
+			syntax
+				String toString()
+			Converts to a string representing the data in the string buffer
+String Class
+	1.length()
+		syntax
+			int length()
+		Returns the length of the string that invoked this method
+		s.length()
+	2.concat()
+		syntax
+			String concat(String string2)
+		Returns the concated string i.e appends string2 at the end of the string1 and returns the new string
+		s1.concat(s2) //returns s1+s2
+	3.format()
+		syntax
+			String format(String str)
+		Returns the given string with given format
+		String.format("My name is  %s . I got %f percentage with %d marks","Sravani",89.3f,92)
+	4.charAt()
+		syntax
+			public char charAt(int index)
+		Returns char at the given index in the string that invoked the method
+		if give more than length it will give IndexOutOfBoundsException
+		s.charAt(2)
+	5.compareTo()
+		syntax
+			int compareTo(Object o)
+			int compareTo(String anotherString)
+		Returns 0,+ve,-ve comapares lexicographically
+		s.compareTo("Hello")
+	6.compareToIgnoreCase()
+		syntax
+			int compareToIgnoreCase(String str)
+		Returns 0,+ve,-ve ignoring case consideration
+		s.compareToIgnoreCase("hello")
+	7.concat()
+		syntax
+			public String concat(String str)
+		Returns the two string concatenation output
+		s.concat("World")
+	8.contentEquals()
+		syntax
+			public boolean contentEquals(StringBuffer str)
+		Returns true if the content is equal else false
+		StringBuffer sb=new StringBuffer("Hello")
+		s.contentEquals(sb)
+	9.copyValueOf(char[] data)
+		syntax
+			public String copyValueOf(char[] data)
+		Returns String that contains the sequence of char list
+		String.copyValueOf(charlist)
+	10.copyValueof()
+		syntax
+			public String copyValueOf(char[] data,int offset,int count)
+		This method returns a String that contains the characters of the character array
+		s.copyValueOf(s,2,4)
+	11.endsWith()
+		syntax
+			public boolean endsWith(String str)
+		Returns true if the string ends with the specified string sequence else false
+		s.endsWith("lo")
+	12.equals()
+		syntax
+			public boolean equals(Object obj)
+		Returns true if the char sequence is same as string
+		s.equals(new StringBuffer("Hello"))
+	13.getBytes()
+		syntax
+			public bytes[] getBytes(String charsetName) throws UnsupportedEncodingException
+		This method returns the resultant byte array.
+		s.getBytes("UTF-8")
+		s.getBytes("ISO-8859-1")
+	14.getBytes()
+		syntax bytes[] getBytes()
+		This method encodes this String into a sequence of bytes using the platform's default charset, storing the result into a new byte array
+		s.getBytes()
+	15.getChars()
+		syntax
+			void getChars(int srcBegin,int srcEnd,char[] dst,int dstBegin)
+		Characters are copied from this string  into the destination character array dst
+		s.getChars(2,5,chararray,2);
+	16.hashCode()
+		syntax
+			public int hashCode()
+		Returns hashcode of the given string
+		s.hashCode()
+	17.indexOf()
+		syntax
+			public int indexOf(char ch)
+		Returns the first occurrence of the char index in the string else -1
+		s.indexOf('l')
+	18.indexOf(char ch,int startIndex)
+		syntax
+			public indexOf(char ch,int startIndex)
+		This method returns the index within this string of the first occurrence of the specified character, starting the search at the specified index or -1, if the character does not occur.
+		s.indexOf('l',3)
+	18.indexOf()
+		syntax
+			public int indexOf(String str)
+		This method returns the index within this string of the first occurrence of the specified substring. If it does not occur as a substring, -1 is returned.
+		s.indexOf("lo")
+	19.indexOf()
+		syntax
+			public int indexOf(String str,int startIndex)
+		This method returns the index within this string of the first occurrence of the specified substring, starting at the specified index. If it does not occur, -1 is returned.
+		s.indexOf("lo",3)
+	20.	intern()
+		syntax
+			public String intern()
+		This method returns a canonical representation for the string object. It follows that for any two strings s and t, s.intern() == t.intern() is true if and only if s.equals(t) is true. 	
+		s.intern()
+	21.lastIndexOf()
+		syntax
+			int lastIndexOf(char ch)
+		This method returns the index of the last occurrence of the character in the character sequence represented by this object that is less than or equal to fromIndex, or -1 if the character does not occur before that point.
+		s.lastIndexOf('l')
+	22.	lastIndexOf()
+		syntax
+			int lastIndexOf(char ch,int fromIndex)
+		This method returns the index of the last occurrence of the character in the character sequence represented by this object that is less than or equal to fromIndex, or -1 if the character does not occur before that point
+	23.lastIndexOf()
+		syntax
+			int lastIndexOf(String str)
+		This method accepts a String as an argument, if the string argument occurs one or more times as a substring within this object, then it returns the index of the first character of the last such substring is returned. If it does not occur as a substring, -1 is returned
+		s.lastIndexOf("l")
+	24.lastIndexOf()
+		syntax
+			int lastIndexOf(String str,int fromIndex)
+		This method returns the index within this string of the last occurrence of the specified substring, searching backward starting at the specified index.
+		s.lastIndexOf("l",2)
+	25.length()
+		syntax
+			public int length()
+		This method returns the length of this string. The length is equal to the number of 16-bit Unicode characters in the string.	 	
+		s.length()
+	26.matches()
+		syntax
+			public boolean matches(String regex)
+		This method tells whether or not this string matches the given regular expression. An invocation of this method of the form str.matches(regex) yields exactly the same result as the expression Pattern.matches(regex, str).
+		This method returns true if, and only if, this string matches the given regular expression. 
+		s.matches("(.*)ll(.*)")
+	27.regionMAtches()
+		syntax
+			public boolean regionMatches(int toffset,String other,int ooffset,	int len)
+			public boolean regionMatches(boolean ignorecase,int toffset,String other,int ooffset,	int len)		
+			toffset -- the starting offset of the subregion in this string.
+			other -- the string argument.
+			ooffset -- the starting offset of the subregion in the string argument.
+			len -- the number of characters to compare.
+			ignoreCase -- if true, ignore case when comparing characters
+		It returns true if the specified subregion of this string matches the specified subregion of the string argument; false otherwise. Whether the matching is exact or case insensitive depends on the ignoreCase argument
+		s.regionMatches(2,"ll",0,2)
+	28.replace()
+		syntax
+			public String replace(char oldChar,char newChar)
+		It returns a string derived from this string by replacing every occurrence of oldChar with newChar.	
+		s.replace('l','L')
+	29.replaceAll()
+		syntax
+			public replaceAll(String regex,String replacement)
+		This method replaces each substring of this string that matches the given regular expression with the given replacement	
+		s.replace("l","Hello")
+	30.replaceFirst()
+		syntax
+			public replaceFirst(String regex,String replacement)
+		This method replaces the first substring of this string that matches the given regular expression with the given replacement
+		s.replaceFirst("l",Hello)
+		
+	31.split()
+		syntax
+			public 	String[] split(String regex)
+			public String[] split(String regex,int limit)
+			regex -- the delimiting regular expression.
+			limit -- the result threshold, which means how many strings to be returned.
+		This method has two variants and splits this string around matches of the given regular expression.
+		It returns the array of strings computed by splitting this string around matches of the given regular expression.	
+		s.split("l")
+		s.split("l",2)
+	32.startsWith()
+		syntax
+			public boolean startsWith(String prefix)
+			public boolean startsWith(String prefix,int tooffset)
+			prefix -- the prefix to be matched.
+			toffset -- where to begin looking in the string.
+		It returns true if the character sequence represented by the argument is a prefix of the character sequence represented by this string; false otherwise.
+		This method has two variants and tests if a string starts with the specified prefix beginning a specified index or by default at the beginning
+		s.startsWith("He")
+		s.startsWith("ll",1)
+	33.subSequence()
+		syntax
+			public CharSequence subSequence(int beginIndex, int endIndex)
+			beginIndex -- the begin index, inclusive.
+			endIndex -- the end index, exclusive.
+		This method returns a new character sequence that is a subsequence of this sequence
+		s.subSequence(1,3)
+	34.substring()
+		syntax
+			public String substring(int beginIndex)
+			public String substring(int beginIndex,int endIndex)
+		This method has two variants and returns a new string that is a substring of this string.The substring begins with the character at the specified index and extends to the end of this string or up to endIndex – 1, if the second argument is given.
+		s.substring(1,2)
+		s.substring(1)
+	35.toCharArray()
+		syntax
+			public char[] toCharArray()	
+		It returns a newly allocated character array, whose length is the length of this string and whose contents are initialized to contain the character sequence represented by this string.
+		s.toCharArray()
+	36.toLowerCase()
+		syntax
+			public String toLowerCase()
+		This method has two variants. The first variant converts all of the characters in this String to lower case using the rules of the given Locale. This is equivalent to calling toLowerCase(Locale.getDefault()).
+		s.toLowerCase()
+	37.toUpperCase()
+		syntax
+			public String toUpperCase()
+		This method has two variants. The first variant converts all of the characters in this String to lower case using the rules of the given Locale. This is equivalent to calling toLowerCase(Locale.getDefault())
+		s.toUpperCase()
+	38.	toString()
+		syntax
+			public String toString()
+		This method returns itself a string
+		s.toString()
+	39.trim()
+		syntax
+			public String trim()
+		This method returns a copy of the string, with leading and trailing whitespace omitted
+		It returns a copy of this string with leading and trailing white space removed, or this string if it has no leading or trailing white space
+		s.trim()
+	40.valueOf()
+		syntax
+			static String valueOf(boolean b)
+			static String valueOf(char c)
+			static String valueOf(char[] data)
+			static String valueOf(char[] data, int offset, int count)
+			static String valueOf(double d)
+			static String valueOf(float f)
+			static String valueOf(int i)
+			static String valueOf(long l)
+			static String valueOf(Object obj)
+		This method returns the string representation.
+		String.valueOf(2.3f)
+		
+		
+		
+		
+						
+StringBuilder
+	in java 5
+	main difference between StringBuilder and StringBuffer is StringBuffer is not Thread safe i.e not synchronized but it is very faster than StringBuffer
+	if Thread safety is necessary then we go for StringBuffer
+	
