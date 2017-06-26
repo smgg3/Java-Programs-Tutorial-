@@ -1,4 +1,4 @@
-package com.test.environment;
+package com.test.B_Environment;
 
 public class Environment {
 
