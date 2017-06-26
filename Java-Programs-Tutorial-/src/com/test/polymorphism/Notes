@@ -1,0 +1,4 @@
+	Dynamic Polymorphism: Same method is overridden with same signature in different classes. 
+	Type of object on which method is being invoked is not known at compile time but will be decided at run time. ... 
+	And this is why Method Overloading is known as Static Polymorphism
+	

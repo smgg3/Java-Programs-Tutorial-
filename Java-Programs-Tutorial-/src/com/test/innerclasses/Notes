@@ -1,0 +1,23 @@
+InnerClasses
+	Variables of a class too can have another class as its member
+	the class written within class is called the nested class
+	the class that holds the inner class is called outer class
+	syntax
+		class outerclass{
+			class innerclass{
+			
+			}
+		}
+	two types
+		Non-static nested classes: These are the non-static members of a class.
+		Static nested classes: These are the static members of a class.
+InnerClasses(Non-static Nested Classes)
+	Inner Classes are a security mechanism in JAVA.
+	we know we can't associate a class with private modifer. But we can associate an inner class with private class and it can access private members of the class.
+	Three types
+		Inner classes
+		Method-local Inner Classes
+		anonymous Inner Classes
+	Inner Classes
+		
+			
