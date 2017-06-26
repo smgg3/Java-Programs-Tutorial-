@@ -1,0 +1,139 @@
+Date class
+	available in java.util class
+	this class encapsulates the current date and time
+Constructor
+	1.Date()
+		This constructor initializes the object with current date and time
+		Date current =new Date();
+	2.Date()
+		syntax
+			Date(long milliseconds)
+		This constructor accepts an argument that is equal to  milli seconds that have elapsed since midnight jan 1 1970
+		Date d=new Date(10000);
+	3.Date()
+		syntax
+			Date(int year,int month,int date)
+		returns a object with the given date values
+		Date d=new Date(12,4,2018)
+	4.Date()
+		syntax
+			Date(int year,int month,int date,int hours,int min)
+		Returns a date object with specified date and time values
+	5.Date()
+		syntax
+			Date(int year,int month,int date,int hours,int min,int sec)
+		Returns an onject with specified date and time values
+	6.Date()
+		syntax
+			Date(String s)
+		Returns a date with specified string date values format
+		
+Methods
+	1.after()
+		syntax
+			boolean after(Date date)
+		Returns true if the invoked object date value is after the specified date in the argument else false
+		
+	2.before()
+		syntax
+			boolean before(Date date)
+		Returns true if the invoked object date value is before the specified date in the argument else false
+	
+	3.clone()
+		syntax
+			Object clone()
+		Returns a object that duplicates invoked Date object
+	4.compareTo()
+		syntax
+			int compareTo(Date date)
+			int compareTo(Object obj)
+		Returns 0 if both are equal -ve if invoked is before specified else +ve
+		Operates identically to compareTo(Date) if obj is of class Date. Otherwise, it throws a ClassCastException.
+	5.equals()
+		syntax
+			boolean equals(Object date)
+		Operates identically to compareTo(Date) if obj is of class Date. Otherwise, it throws a ClassCastException.
+	6.long getTime()
+		syntax
+			long getTime()
+		Returns the number of milliseconds that have elapsed since January 1, 1970.
+	7.int hashCode()
+		syntax
+			int hashCode()
+		Returns a hash code for the invoking object
+	8.setTime()
+		syntax
+			void setTime(long time)
+		Sets the time and date as specified by time, which represents an elapsed time in milliseconds from midnight, January 1, 1970
+	9.String toString()
+		syntax
+			String toString()
+		Converts the invoking Date object into a string and returns the result
+Date Comparision
+	You can use getTime( ) to obtain the number of milliseconds that have elapsed since midnight, January 1, 1970, for both objects and then compare these two values.
+	You can use the methods before( ), after( ), and equals( ). Because the 12th of the month comes before the 18th, for example, new Date(99, 2, 12).before(new Date (99, 2, 18)) returns true.
+	You can use the compareTo( ) method, which is defined by the Comparable interface and implemented by Date.
+Date Formatting Using SimpleDateFormat
+	SimpleDateFormat is a concrete class for formatting and parsing dates in a locale-sensitive manner. SimpleDateFormat allows you to start by choosing any user-defined patterns for date-time formatting. For example:
+	syntax
+		SimpleDateFormat format=new SimpleDateFormat("E yyyy.dd.mm 'at' hh:mm:ss a zzz")
+	Object format(Date date)
+	format.format(Date date)	
+Simple DateFormat Codes
+	Character Description Example
+	G Era designator AD
+	y Year in four digits 2001
+	M Month in year July or 07
+	d Day in month 10
+	h Hour in A.M./P.M. (1~12) 12
+	H Hour in day (0~23) 22
+	m Minute in hour 30
+	s Second in minute 55
+	S Millisecond 234
+	E Day in week Tuesday
+	D Day in year 360
+	F Day of week in month 2 (second Wed. in July)
+	w Week in year 40
+	W Week in month 1
+	a A.M./P.M. marker PM
+	k Hour in day (1~24) 24
+	K Hour in A.M./P.M. (0~11) 10
+	z Time zone Eastern Standard Time
+	' Escape for text Delimiter
+	" Single quote `	 	
+Date formatting using printf
+	date and time formatting can be done easily using printf
+	Character Description Example
+	c Complete date and time Mon May 04 09:51:52 CDT 2009
+	F ISO 8601 date 2004-02-09 
+	D U.S. formatted date (month/day/year) 02/09/2004
+	T 24-hour time 18:05:19
+	r 12-hour time 06:05:19 pm
+	R 24-hour time, no seconds 18:05
+	Y Four-digit year (with leading zeroes) 2004
+	y Last two digits of the year (with leading zeroes) 04
+	C First two digits of the year (with leading zeroes) 20
+	B Full month name February
+	b Abbreviated month name Feb
+	m Two-digit month (with leading zeroes) 02
+	d Two-digit day (with leading zeroes) 03
+	e Two-digit day (without leading zeroes) 9
+	A Full weekday name Monday
+	a Abbreviated weekday name Mon
+	j Three-digit day of year (with leading zeroes) 069
+	H Two-digit hour (with leading zeroes), between 00 and 23 18
+	k Two-digit hour (without leading zeroes), between 0 and 23 18
+	I Two-digit hour (with leading zeroes), between 01 and 12 06
+	l Two-digit hour (without leading zeroes),between 1 and 12 6
+	M Two-digit minutes (with leading zeroes) 05
+	S Two-digit seconds (with leading zeroes) 19
+	L Three-digit milliseconds (with leading zeroes) 047
+	N Nine-digit nanoseconds (with leading zeroes) 047000000
+	P Uppercase morning or afternoon marker PM
+	p Lowercase morning or afternoon marker pm
+	z RFC 822 numeric offset from GMT -0800
+	Z Time zone PST
+	s Seconds since 1970-01-01 00:00:00 GMT 1078884319
+	Q Milliseconds since 1970-01-01 00:00:00 GMT 1078884319047
+		
+	

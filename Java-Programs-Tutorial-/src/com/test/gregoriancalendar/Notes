@@ -1,0 +1,134 @@
+Calendar
+	public abstract class Calendar
+	extends Object
+	implements Serializable, Cloneable, Comparable<Calendar>
+GregorianCalendar
+	public class GregorianCalendar
+	extends Calendar
+	It is a concrete implementation of a Calendar class that implements the normal Gregorian Calendar with which you are familiar.
+	getInstance() method of Calendar returns a GregorianCalendar initialized with the current date and time in the default locale and time zone.
+	Gregorian Calendar defines two fields AD,BC.These represent the two eras defined by the gregorian calendar
+	Constructors
+		GregorianCalendar()
+			Constructs a default GregorianCalendar using the current time in the default time in the default timezone
+			java.util.GregorianCalendar[time=1498432512556,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="America/Chicago",offset=-21600000,dstSavings=3600000,useDaylight=true,transitions=235,lastRule=java.util.SimpleTimeZone[id=America/Chicago,offset=-21600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=3,startMonth=2,startDay=8,startDayOfWeek=1,startTime=7200000,startTimeMode=0,endMode=3,endMonth=10,endDay=1,endDayOfWeek=1,endTime=7200000,endTimeMode=0]],firstDayOfWeek=1,minimalDaysInFirstWeek=1,ERA=1,YEAR=2017,MONTH=5,WEEK_OF_YEAR=26,WEEK_OF_MONTH=5,DAY_OF_MONTH=25,DAY_OF_YEAR=176,DAY_OF_WEEK=1,DAY_OF_WEEK_IN_MONTH=4,AM_PM=1,HOUR=6,HOUR_OF_DAY=18,MINUTE=15,SECOND=12,MILLISECOND=556,ZONE_OFFSET=-21600000,DST_OFFSET=3600000]
+		GregorianCalendar(int year,int month,int date)
+			Constructs a GregorianCalendar with the given date set in the default time zone with the default locale
+			java.util.GregorianCalendar[time=?,areFieldsSet=false,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="America/Chicago",offset=-21600000,dstSavings=3600000,useDaylight=true,transitions=235,lastRule=java.util.SimpleTimeZone[id=America/Chicago,offset=-21600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=3,startMonth=2,startDay=8,startDayOfWeek=1,startTime=7200000,startTimeMode=0,endMode=3,endMonth=10,endDay=1,endDayOfWeek=1,endTime=7200000,endTimeMode=0]],firstDayOfWeek=1,minimalDaysInFirstWeek=1,ERA=?,YEAR=2017,MONTH=1,WEEK_OF_YEAR=?,WEEK_OF_MONTH=?,DAY_OF_MONTH=5,DAY_OF_YEAR=?,DAY_OF_WEEK=?,DAY_OF_WEEK_IN_MONTH=?,AM_PM=0,HOUR=0,HOUR_OF_DAY=0,MINUTE=0,SECOND=0,MILLISECOND=?,ZONE_OFFSET=?,DST_OFFSET=?]
+		GregorianCalendar(int year,int month,int date,int hour,int minute)
+			Constructs a GregorianCalendar with the given date and time set for the default time zone with the default locale.
+			java.util.GregorianCalendar[time=?,areFieldsSet=false,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="America/Chicago",offset=-21600000,dstSavings=3600000,useDaylight=true,transitions=235,lastRule=java.util.SimpleTimeZone[id=America/Chicago,offset=-21600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=3,startMonth=2,startDay=8,startDayOfWeek=1,startTime=7200000,startTimeMode=0,endMode=3,endMonth=10,endDay=1,endDayOfWeek=1,endTime=7200000,endTimeMode=0]],firstDayOfWeek=1,minimalDaysInFirstWeek=1,ERA=?,YEAR=2017,MONTH=5,WEEK_OF_YEAR=?,WEEK_OF_MONTH=?,DAY_OF_MONTH=1,DAY_OF_YEAR=?,DAY_OF_WEEK=?,DAY_OF_WEEK_IN_MONTH=?,AM_PM=0,HOUR=1,HOUR_OF_DAY=1,MINUTE=10,SECOND=0,MILLISECOND=?,ZONE_OFFSET=?,DST_OFFSET=?]
+		GregorianCalendar(int year,int month,int date,int hour,int minute,int second)
+			Constructs a GregorianCalendar with the given date and time set for the default time zone with the default locale.
+			java.util.GregorianCalendar[time=?,areFieldsSet=false,areAllFieldsSet=false,lenient=true,zone=sun.util.calendar.ZoneInfo[id="America/Chicago",offset=-21600000,dstSavings=3600000,useDaylight=true,transitions=235,lastRule=java.util.SimpleTimeZone[id=America/Chicago,offset=-21600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=3,startMonth=2,startDay=8,startDayOfWeek=1,startTime=7200000,startTimeMode=0,endMode=3,endMonth=10,endDay=1,endDayOfWeek=1,endTime=7200000,endTimeMode=0]],firstDayOfWeek=1,minimalDaysInFirstWeek=1,ERA=?,YEAR=2017,MONTH=5,WEEK_OF_YEAR=?,WEEK_OF_MONTH=?,DAY_OF_MONTH=1,DAY_OF_YEAR=?,DAY_OF_WEEK=?,DAY_OF_WEEK_IN_MONTH=?,AM_PM=0,HOUR=1,HOUR_OF_DAY=1,MINUTE=10,SECOND=5,MILLISECOND=?,ZONE_OFFSET=?,DST_OFFSET=?]
+		GregorianCalendar(Locale aLocale)
+			Constructs a GregorianCalendar based on the current time in the default time zone with the given locale
+			java.util.GregorianCalendar[time=1498434622918,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="America/Chicago",offset=-21600000,dstSavings=3600000,useDaylight=true,transitions=235,lastRule=java.util.SimpleTimeZone[id=America/Chicago,offset=-21600000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=3,startMonth=2,startDay=8,startDayOfWeek=1,startTime=7200000,startTimeMode=0,endMode=3,endMonth=10,endDay=1,endDayOfWeek=1,endTime=7200000,endTimeMode=0]],firstDayOfWeek=1,minimalDaysInFirstWeek=1,ERA=1,YEAR=2017,MONTH=5,WEEK_OF_YEAR=26,WEEK_OF_MONTH=5,DAY_OF_MONTH=25,DAY_OF_YEAR=176,DAY_OF_WEEK=1,DAY_OF_WEEK_IN_MONTH=4,AM_PM=1,HOUR=6,HOUR_OF_DAY=18,MINUTE=50,SECOND=22,MILLISECOND=918,ZONE_OFFSET=-21600000,DST_OFFSET=3600000]
+			GregorianCalendar g5=new GregorianCalendar(java.util.Locale.TAIWAN);
+		GregorianCalendar(TimeZone zone)
+			Constructs a GregorianCalendar based on the current time in the given timezone with the default locale.
+			java.util.GregorianCalendar[time=1498434384572,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="America/Los_Angeles",offset=-28800000,dstSavings=3600000,useDaylight=true,transitions=185,lastRule=java.util.SimpleTimeZone[id=America/Los_Angeles,offset=-28800000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=3,startMonth=2,startDay=8,startDayOfWeek=1,startTime=7200000,startTimeMode=0,endMode=3,endMonth=10,endDay=1,endDayOfWeek=1,endTime=7200000,endTimeMode=0]],firstDayOfWeek=1,minimalDaysInFirstWeek=1,ERA=1,YEAR=2017,MONTH=5,WEEK_OF_YEAR=26,WEEK_OF_MONTH=5,DAY_OF_MONTH=25,DAY_OF_YEAR=176,DAY_OF_WEEK=1,DAY_OF_WEEK_IN_MONTH=4,AM_PM=1,HOUR=4,HOUR_OF_DAY=16,MINUTE=46,SECOND=24,MILLISECOND=572,ZONE_OFFSET=-28800000,DST_OFFSET=3600000]
+			GregorianCalendar g4=new GregorianCalendar(java.util.SimpleTimeZone.getTimeZone("America/Los_Angeles"));
+		GregorianCalendar(TimeZone zone,Locale aLocale)
+			Constructs a GregorianCalendar based on the current time in the given timezone with the given locale.
+			java.util.GregorianCalendar[time=1498434781283,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="America/Los_Angeles",offset=-28800000,dstSavings=3600000,useDaylight=true,transitions=185,lastRule=java.util.SimpleTimeZone[id=America/Los_Angeles,offset=-28800000,dstSavings=3600000,useDaylight=true,startYear=0,startMode=3,startMonth=2,startDay=8,startDayOfWeek=1,startTime=7200000,startTimeMode=0,endMode=3,endMonth=10,endDay=1,endDayOfWeek=1,endTime=7200000,endTimeMode=0]],firstDayOfWeek=1,minimalDaysInFirstWeek=1,ERA=1,YEAR=2017,MONTH=5,WEEK_OF_YEAR=26,WEEK_OF_MONTH=5,DAY_OF_MONTH=25,DAY_OF_YEAR=176,DAY_OF_WEEK=1,DAY_OF_WEEK_IN_MONTH=4,AM_PM=1,HOUR=4,HOUR_OF_DAY=16,MINUTE=53,SECOND=1,MILLISECOND=283,ZONE_OFFSET=-28800000,DST_OFFSET=3600000]
+			GregorianCalendar g6=new GregorianCalendar(java.util.SimpleTimeZone.getTimeZone("America/Los_Angeles"),java.util.Locale.CANADA);
+		Methods
+			1.add()
+				void add(int field,int amount)
+				adds specified amount of time to the given field based on the calendar's rules
+				index starts from 0 to end (ERA=1,YEAR=2017,MONTH=5,WEEK_OF_YEAR=26,WEEK_OF_MONTH=5,DAY_OF_MONTH=25,DAY_OF_YEAR=176,DAY_OF_WEEK=1,DAY_OF_WEEK_IN_MONTH=4,AM_PM=1,HOUR=7,HOUR_OF_DAY=19,MINUTE=21,SECOND=39,MILLISECOND=410,ZONE_OFFSET=-21600000,DST_OFFSET=3600000])
+				g.add(2, 2); adds two more months to month field
+			2.protected void computeFields()
+				Converts UTC as milliseconds to time field values.
+				we can't use it because it is an protected method
+			3.protected void computeTime()
+				Overrides Calendar Converts time field values to UTC as milliseconds.
+				we can't use it because it is an protected method
+			4.boolean equals(Object obj)
+				System.out.println(g.equals(new GregorianCalendar()));
+				Compares this GregorianCalendar to an object reference.
+			5.int get(int field)
+				it returns value of the field in the given index
+				Calendar.MONTH GIVES month index in the object  i.e 2   0 era 1 year 2 is month
+				Calendar.AUGUST gives august month index i.e 7  months index starts from 0  since august is 8 month index is 7
+				g.get(2)  or g.get(Calendar.MONTH)  both returns month of the year
+			6.int getActualMaximum(int field)
+				returns the maximum value that this field could have,given the current date
+				System.out.println(g.getActualMaximum(2));   it returns 11 because max month value is 11  i.e from 0 to 11
+				if 13 i.e second it returns 59
+			7.int getActualMinimum(int field)
+				returns the minimum value that this field could have,given the current date
+				System.out.println(g.getActualMinimum(2));   it returns 0 because min month value is 0  i.e from 0 to 11
+				if 13 i.e second it returns 0
+			8.int getGreatestMinimum(int field)
+					Returns highest minimum value for the given field if varies.
+					
+			9.public final Date getGregorianChange()
+					gets the gregorian change date
+					Thu Oct 04 18:00:00 CST 1582
+					public final Date getGregorianChange()
+					Gets the Gregorian Calendar change date. This is the point when the switch from Julian dates to Gregorian dates occurred. Default is October 15, 1582 (Gregorian). Previous to this, dates will be in the Julian calendar.
+					Returns:the Gregorian cutover date for this GregorianCalendar object.
+			10.int getLeastMaximum(int field)
+					gets the lowest maximum value for the given field
+					Ex: 4 field is week of month it can have max of 3 or 5 least
+			11.int getMaximum(int field)
+					returns maximum value for the given field
+			12.getTime()
+					Returns a Date object representing this Calendar's time value (millisecond offset from the Epoch").
+			13.getTimeInMillis()
+					gets this Calendar's current time as long
+					the current time as UTC milliseconds from the epoch.
+			14.TimeZone getTimeZone()
+					gets the timezone
+					Description copied from class: Calendar.
+					Overrides:getTimeZone in class Calendar
+			15.int getMinimum(int field)
+					returns minimum value for the given field
+			16.int hashCode()
+					Generates the hash code for this GregorianCalendar object.
+					Overrides:hashCode in class Calendar
+			17.boolean isLeapYear(int year)
+					returns true if year is leap else false
+					Determines if the given year is a leap year. Returns true if the given year is a leap year. To specify BC year numbers, 1 - year number must be given. For example, year BC 4 is specified as -3.
+					Parameters:year - the given year.
+			18.void roll(int field,boolean up)
+					Adds or subtracts (up/down) a single unit of time on the given time field without changing larger fields. 
+					Example: Consider a GregorianCalendar originally set to December 31, 1999. Calling roll(Calendar.MONTH, true) sets the calendar to January 31, 1999. The YEAR field is unchanged because it is a larger field than MONTH.
+					Specified by:roll in class CalendarParameters:up - indicates if the value of the specified calendar field is to be rolled up or rolled down. Use true if rolling up, false otherwise.field - the time field.Throws:IllegalArgumentException - if field is ZONE_OFFSET, DST_OFFSET, or unknown, or if any calendar fields have out-of-range values in non-lenient mode.
+			19.void set(int field, int value)
+					Sets the time field with the given value.
+			20.void set(int year, int month, int date)
+					Sets the values for the fields year, month, and date.
+			21.void set(int year, int month, int date, int hour, int minute)
+					Sets the values for the fields year, month, date, hour, and minute.
+			22.void set(int year, int month, int date, int hour, int minute, int second)
+					Sets the values for the fields year, month, date, hour, minute, and second.
+			23.void setGregorianChange(Date date)
+					Sets the GregorianCalendar change date. This is the point when the switch from Julian dates to Gregorian dates occurred. Default is October 15, 1582 (Gregorian). Previous to this, dates will be in the Julian calendar. 
+					To obtain a pure Julian calendar, set the change date to Date(Long.MAX_VALUE). To obtain a pure Gregorian calendar, set the change date to Date(Long.MIN_VALUE).
+					Parameters:date - the given Gregorian cutover date.
+			24.void setTime(Date date)
+					Sets this Calendar's current time with the given Date.
+			25.void setTimeInMillis(long millis)
+					Sets this Calendar's current time from the given long value.
+			26.void setTimeZone(TimeZone value)
+					Sets the time zone with the given time zone value.
+			27.String toString()
+					Returns a string representation of this calendar.
+												
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+					
