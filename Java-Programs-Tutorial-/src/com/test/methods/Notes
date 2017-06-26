@@ -1,0 +1,303 @@
+Methods
+	is a collection of statements that are grouped together to perform an operation.
+	Ex:	public static int methodName(int a, int b) {
+		 // body
+		}
+		Here,
+		public static: modifier
+		int: return type
+		methodName: name of the method
+		a, b: formal parameters
+		int a, int b: list of parameters
+	syntax
+		modifier returnType nameOfMethod (Parameter List) {
+			// method body
+		}
+		The syntax shown above includes:
+		modifier: It defines the access type of the method and it is optional to use.
+		returnType: Method may return a value.
+		nameOfMethod: This is the method name. The method signature consists of the method name and the parameter list.
+		Parameter List: The list of parameters, it is the type, order, and number of parameters of a method. These are optional, method may contain zero parameters.
+		method body: The method body defines what the method does with the statements
+Method Calling
+	For using method it should be called .
+	There are two ways in which a method is called i.e method returns a value or returns nothing
+	When method is called by propgram the program control transferred to method
+	the method will returns the control to the caller in two ways
+		one return statement executed
+		it reaches the method closing brace
+Return Type
+	The methods returning void is considered as call to a statement
+	System.out.println("Hello")
+	The methods returning something is
+	int i=sum(2,3)			//we can assign it to compatible data type variable or else we can call it without assigning return return value to any variable
+Passing Parameters
+	While working under calling process, arguments is to be passed. These should be in the same order as their respective parameters in the method specification. Parameters can be passed by value or by reference.
+Method Overloading
+	When a class has two or more methods by the same name but different parameters, it is known as method overloading.
+Using Command-Line Arguments
+	Sometimes you will want to pass some information into a program when you run it. This is accomplished by passing command-line arguments to main( ).
+	A command-line argument is the information that directly follows the program's name on the command line when it is executed. To access the command-line arguments inside a Java program is quite easy. They are stored as strings in the String array passed to main( ).
+	$java ClassName this is a command line 200 -100
+Constructors
+	A constructor initializes an object when it is created. It has the same name as its class and
+		is syntactically similar to a method. However, constructors have no explicit return type.
+	Typically, you will use a constructor to give initial values to the instance variables defined
+		by the class, or to perform any other startup procedures required to create a fully formed object.
+	All classes have constructors, whether you define one or not, because Java automatically
+		provides a default constructor that initializes all member variables to zero. However, once
+		you define your own constructor, the default constructor is no longer used.	
+Parameterized Constructor
+	Most often, you will need a constructor that accepts one or more parameters. Parameters
+		are added to a constructor in the same way that they are added to a method, just declare
+		them inside the parentheses after the constructor's name.	
+this keyword
+	Is used as a reference to the object of the current class,with in an instance method or constructor
+	using this we can refer the members of the class such as constructors,methods,variables
+	When to use this
+		Differentiate the instance variables for the local variables with in the constructors and methods
+			void sum(int x){
+				System.out.println(this.x);
+			}
+		Call one type of constructor from other in a class,It is known as explicit constructor invocation
+			Hello(){this(1);}
+			Hello(int x){}
+Variable Arguments
+	JDK 1.5 enables you to pass a variable number of arguments of the same type to a method.
+	The parameter in the method is declared as follows:
+		typeName... parameterName
+			In the method declaration, you specify the type followed by an ellipsis (...). Only one variable-length parameter may be specified in a method, and this parameter must be the
+			last parameter. Any regular parameters must precede it.
+finalize method
+	finalize() method is a protected and non-static method of java.lang.Object class. This method will be available in all objects you create in java. 
+	This method is used to perform some final operations or clean up operations on an object before it is removed from the memory.  
+	you can override the finalize() method to keep those operations you want to perform before an object is destroyed. 
+	Here is the general form of finalize() method.
+	protected void finalize() throws Throwable
+	{
+	    //Keep some resource closing operations here
+	}
+Garbage Collection In Java :
+	Whenever you run a java program, JVM creates three threads.
+	 1) main thread   2) Thread Scheduler   3) Garbage Collector Thread. 
+	 In these three threads, main thread is a user thread and remaining two are daemon threads which run in background.
+	
+	The task of main thread is to execute the main() method. 
+	The task of thread scheduler is to schedule the threads. 
+	The task of garbage collector thread is to sweep out abandoned objects from the heap memory. 
+	Abandoned objects or dead objects are those objects which does not have live references. 
+	Garbage collector thread before sweeping out an abandoned object, it calls finalize() method of that object. 
+	After finalize() method is executed, object is destroyed from the memory. 
+	That means clean up operations which you have kept in the finalize() method are executed before an object is destroyed from the memory.
+
+	Garbage collector thread does not come to heap memory whenever an object becomes abandoned. 
+	It comes once in a while to the heap memory and at that time if it sees any abandoned objects, it sweeps out those objects after calling finalize() method on them. 
+	Garbage collector thread calls finalize() method only once for one object.	
+	
+1) In some scenarios, finalize() method is not at all called by the garbage collector thread. 
+	For example, When I executed the below program in my system, finalize() method of Class A is not at all executed.
+		class A
+		{
+		    int i = 50;
+		 
+		    @Override
+		    protected void finalize() throws Throwable
+		    {
+		        System.out.println("From Finalize Method");
+		    }
+		}
+		 
+		public class Test
+		{
+		   public static void main(String[] args)
+		   {
+		      //Creating two instances of class A
+		 
+		      A a1 = new A();
+		 
+		      A a2 = new A();
+		 
+		      //Assigning a2 to a1
+		 
+		      a1 = a2;
+		 
+		      //Now both a1 and a2 will be pointing to same object 
+		 
+		      //An object earlier referred by a1 will become abandoned
+		 
+		      System.out.println("done");
+		   }
+		}
+2) We can make finalize() method to be executed forcefully using either Runtime.getRuntime().runFinalization() OR Runtime.runFinalizersOnExit(true). 
+	But, both the methods have disadvantages. Runtime.getRuntime().runFinalization() makes the just best effort to execute finalize() method. 
+	It is not gauranteed that it will execute finalize() method. 
+	Runtime.runFinalizersOnExit(true) is deprecated in JDK because some times it runs finalize() method on live objects also.
+		class A
+		{
+		    int i = 50;
+		 
+		    @Override
+		    protected void finalize() throws Throwable
+		    {
+		        System.out.println("From Finalize Method");
+		    }
+		}
+		 
+		public class Test
+		{
+		   public static void main(String[] args)
+		   {
+		      //Creating two instances of class A
+		 
+		      A a1 = new A();
+		 
+		      A a2 = new A();
+		 
+		      //Assigning a2 to a1
+		 
+		      a1 = a2;
+		 
+		      //Making finalize() method to execute forcefully
+		       
+		      Runtime.getRuntime().runFinalization();
+		 
+		      System.out.println("done");
+		   }
+		}
+3)We can call garbage collector explicitly using System.gc() or RunTime.getRunTime().gc().
+ 	Again it is just a request to garbage collector not a command. 
+ 	It is up to garbage collector to honour this request.
+		class A
+		{
+		    int i;
+		 
+		    public A(int i)
+		    {
+		        this.i = i;
+		    }
+		 
+		    @Override
+		    protected void finalize() throws Throwable
+		    {
+		        System.out.println("From Finalize Method, i = "+i);
+		    }
+		}
+		 
+		public class Test
+		{
+		   public static void main(String[] args)
+		   {
+		       //Creating two instances of class A
+		 
+		       A a1 = new A(10);
+		 
+		       A a2 = new A(20);      
+		 
+		       //Assigning a2 to a1
+		 
+		       a1 = a2;
+		 
+		       //Now both a1 and a2 will be pointing same object 
+		 
+		       //An object earlier referred by a1 will become abandoned
+		 
+		           //Calling garbage collector thread explicitly
+		 
+		       System.gc();              //OR call Runtime.getRuntime().gc();
+		 
+		       System.out.println("done");
+		   }
+		}
+4) finalize() methods are not chained like constructors.i.e there is no calling statement to super class finalize() method inside the finalize() method of sub class. 
+	You need to explicitly call super class finalize() method.
+		protected void finalize() throws Throwable
+		{
+		    System.out.println("From Finalize Method");
+		 
+		    //Calling super class finalize() method explicitly
+		 
+		    super.finalize();
+		}
+5) Exceptions occurred in finalize() method are not propagated. They are ignored by the garbage collector.
+
+6) You can call finalize() method explicitly on an object before it is abandoned. 
+	When you call, only operations kept in finalize() method are performed on an object. 
+	Object will not be destroyed from the memory.
+		class A
+		{
+		    int i;
+		 
+		    public A(int i)
+		    {
+		        this.i = i;
+		    }
+		 
+		    @Override
+		    protected void finalize() throws Throwable
+		    {
+		        System.out.println("From Finalize Method, i = "+i);
+		 
+		        //Calling super class finalize() method explicitly
+		 
+		        super.finalize();
+		    }
+		}
+		 
+		public class Test
+		{
+		   public static void main(String[] args)
+		   {
+		       //Creating two instances of class A
+		 
+		       A a1 = new A(10);
+		 
+		       A a2 = new A(20);      
+		 
+		       //Calling finalize() method of a1 before it is abandoned
+		       try
+		       {
+		           a1.finalize();
+		       }
+		       catch (Throwable e)
+		       {
+		           e.printStackTrace();
+		       }
+		 
+		       //Assigning a2 to a1
+		 
+		       a1 = a2;
+		 
+		       //Now both a1 and a2 will be pointing same object 
+		 
+		       //An object earlier referred by a1 will become abandoned
+		 
+		       System.out.println("done");
+		   }
+		}
+7) finalize() method on an abandoned object is called only once by the garbage collector thread. 
+	GC ignores finalize() method called on an object by the developer.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
