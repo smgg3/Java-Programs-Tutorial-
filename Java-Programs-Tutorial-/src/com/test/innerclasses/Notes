@@ -19,5 +19,149 @@ InnerClasses(Non-static Nested Classes)
 		Method-local Inner Classes
 		anonymous Inner Classes
 	Inner Classes
+		just write class with in a class
+		Making class as private and accessing it with a method
+			class OuterClass {
+					int num;
+					private int x=10;
+					private class InnerClass{	
+						public void print(){
+							System.out.println("From InnerClass ;"+num+x);
+							//displayInnerClass();  // we can't call because it will create infinite loop
+						}
+					}
+					void displayInnerClass(){				//we can't return the object for Innerclass though we return using that object we cant use class sections
+							InnerClass obj=new InnerClass();
+							obj.print();
+					}
+			}
+			public class NonStaticInnerClass{
+					public static void main(String[] args){
+					OuterClass obj=new OuterClass();
+					obj.displayInnerClass();
+					}
+			}
+		Accessing the private members
+			class OuterCls {
+					int num;
+					private int x=10;
+					class InnerCls{
+						public int getPrivate(){
+							System.out.println("From InnerClass returned private varible x;");
+							return x;
+						}
+					}
+			}
+			public class InnerClassPrivateVariables {
+					public static void main(String[] args) {
+							OuterCls outer=new OuterCls();
+							OuterCls.InnerCls inner=outer.new InnerCls();
+							System.out.println(inner.getPrivate());
+					}
+			}
+	Method-Local Inner Class
+		we can write a class in method but that will be a local one
+		scope of inner class is restricted to method
+		we can instantiate inner class only with in the method it was defined
+		Ex:
+			public class MethodLocalInnerClass {
+				void method(){
+					int num=10;
+					class InnerClass{
+						public void print(){
+							System.out.println("From inner class");
+						}
+					}
+					InnerClass inner=new InnerClass();
+					inner.print();
+				}
+				public static void main(String[] args) {
+					
+					MethodLocalInnerClass outer =new MethodLocalInnerClass();
+					outer.method();
+				}
+			}
+		Anonymous Inner Class
+			an inner class defined without a name is called anonymous inner class
+			we declare and instantiate at same time
+			used when we need to override a method of a class or a interface
+			syntax
+				AnonymousInner an_inner = new AnonymousInner(){
+					 public void my_method(){
+					 ........
+					 ........
+					 }
+					};
+			Ex;
+				abstract class AnonymousClass{
+					public abstract void print();
+				}
+				
+				public class AnonymousInnerClass {
+				
+					public static void main(String[] args) {
+						
+						AnonymousClass  inner=new AnonymousClass(){
+							public void print(){
+								System.out.println("From Inner Anonymous Class");
+							}
+						};
+						inner.print();
+					}	
+				}
+			Anonymous inner class as an argument
+				If a method accepts an object of an interface, an abstract class, or a concrete
+					class, then we can implement the interface, extend the abstract class, and pass the object to the method. 
+				Syntax
+					obj.my_Method(new My_Class(){
+						 public void Do(){
+						 .....
+						 .....
+						 }
+						});
+				Ex:
+					interface Anonymous{
+						public void print();
+					}
+					public class AnonymousInnerClassAsArgument {
+					
+						public void method(Anonymous inner){
+							inner.print();
+						}
+						public static void main(String[] args) {
+							
+							AnonymousInnerClassAsArgument outer=new AnonymousInnerClassAsArgument();
+							outer.method(new Anonymous(){
+								public void print(){
+									System.out.println("From anonymous argument inner class ");
+								}
+								
+							});
+					
+						}
+					
+					}	
+	Static Nested Inner Class
+		A static inner class is a nested class which is a static member of the outer class. It can be
+		accessed without instantiating the outer class, using other static members. Just like static
+		members, a static nested class does not have access to the instance variables and methods of the outer class. 			
+		Syntax
+			class MyOuter {
+				 static class Nested_Demo{
+				 }
+				}
+		Ex:
+			public class StaticNestedInnerClass {
+				static class StaticInnerClass{
+					public void print(){
+						System.out.println("From static inner class method");
+					}
+				}
+				public static void main(String[] args) {	
+					StaticNestedInnerClass.StaticInnerClass inner=new StaticNestedInnerClass.StaticInnerClass();
+					inner.print();
+				}
+			}
 		
-			
+		
+		
