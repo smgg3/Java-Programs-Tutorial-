@@ -1,0 +1,271 @@
+Oracle JAVA Exceptions
+		Definition: An exception is an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions.
+		How to trace and handle Exception?
+			When an error occurs within a method, the method creates an object and hands it off to the runtime system. 
+			The object, called an exception object, contains information about the error, including its type and the state of the program when the error occurred. 
+			Creating an exception object and handing it to the runtime system is called throwing an exception.
+			After a method throws an exception, the runtime system attempts to find something to handle it. 
+			The set of possible "somethings" to handle the exception is the ordered list of methods that had been called to get to the method where the error occurred. 
+			The list of methods is known as the call stack
+			The runtime system searches the call stack for a method that contains a block of code that can handle the exception. 
+			This block of code is called an exception handler. The search begins with the method in which the error occurred and proceeds through the call stack in the reverse order in which the methods were called. 
+			When an appropriate handler is found, the runtime system passes the exception to the handler. An exception handler is considered appropriate if the type of the exception object thrown matches the type that can be handled by the handler.
+			The exception handler chosen is said to catch the exception. If the runtime system exhaustively searches all the methods on the call stack without finding an appropriate exception handler, as shown in the next figure, the runtime system (and, consequently, the program) terminates.
+Stack Trace			
+	A stack trace provides information on the execution history of the current thread and lists the names of the classes and methods that were called at the point when the exception occurred. 
+	A stack trace is a useful debugging tool that you'll normally take advantage of when an exception has been thrown.
+Advantages of Exceptions
+	Separating Error-Handling Code from "Regular" Code
+	Propagating Errors Up the Call Stack
+	Grouping and Differentiating Error Types
+Exceptions
+	It is an event , which occurs during the excution of the program, that disrupts the normal flow of the program's instructions
+	Reasons
+		A user has entered an invalid data.
+		A file that needs to be opened cannot be found.
+		A network connection has been lost in the middle of communications or the JVM has run out of memory.
+	Three categories of exceptions
+		Checked exceptions: A checked exception is an exception that occurs at the compile time, these are also called as compile time exceptions. These exceptions
+			cannot simply be ignored at the time of compilation, the programmer should take care of (handle) these exceptions.	
+			Ex:FileNotFoundException,IOException
+		Unchecked exceptions: An unchecked exception is an exception that occurs at the time of execution. These are also called as Runtime Exceptions. These include
+			programming bugs, such as logic errors or improper use of an API. Runtime exceptions are ignored at the time of compilation	
+			Ex:ArrayIndexOutOfBoundsException
+		Errors: These are not exceptions at all, but problems that arise beyond the control of the user or the programmer. Errors are typically ignored in your code because
+			you can rarely do anything about an error. For example, if a stack overflow occurs, an error will arise. They are also ignored at the time of compilation.
+	Exception Hierarchy
+		All exception classes are subclasses of java.lang.Exception class.Exception class is a subclass of Throwable class other than this Exception class has another sub class i.e Error
+		Errors are abnormal conditions happens because of several failure and cannot by handled by java programs
+		generated to indicate errors by runtime environment
+		Ex: JVM is out of memory and programs cannot recover from errors
+java.lang
+	Object
+		Throwable
+			Errors
+			Exception
+				RuntimeException
+				Other Exceptions 
+	BuiltInExceptions
+		java.lang has several predefined exception classes
+	Unchecked  RuntimeException subclasses	
+			ArithmeticException Arithmetic error, such as divide-by-zero.
+			ArrayIndexOutOfBoundsException Array index is out-of-bounds.
+			ArrayStoreException Assignment to an array element of an incompatible type.
+			ClassCastException Invalid cast.
+			IllegalArgumentException Illegal argument used to invoke a method.
+			IllegalMonitorStateException Illegal monitor operation, such as waiting on an unlocked thread.
+			IllegalStateException Environment or application is in incorrect state.
+			IllegalThreadStateException Requested operation not compatible with the current thread state.
+			IndexOutOfBoundsException Some type of index is out-of-bounds.
+			NegativeArraySizeException Array created with a negative size.
+			NullPointerException Invalid use of a null reference.
+			NumberFormatException Invalid conversion of a string to a numeric format.
+			SecurityException Attempt to violate security.
+			StringIndexOutOfBounds Attempt to index outside the bounds of a string.
+			UnsupportedOperationException An unsupported operation was encountered.
+	Checked Exception
+			ClassNotFoundException Class not found.
+			CloneNotSupportedException Attempt to clone an object that does not implement the Cloneable interface.
+			IllegalAccessException Access to a class is denied.
+			InstantiationException Attempt to create an object of an abstract class or interface.
+			InterruptedException One thread has been interrupted by another thread.
+			NoSuchFieldException A requested field does not exist.
+			NoSuchMethodException A requested method does not exist.		
+	Methods
+		public String getMessage()	Returns a detailed message about the exception that has occurred. This message is initialized in the Throwable constructor.
+		public Throwable getCause()	Returns the cause of the exception as represented by a Throwable object.
+		public String toString()	Returns the name of the class concatenated with the result of getMessage().
+		public void printStackTrace()	Prints the result of toString() along with the stack trace to System.err, the error output stream.
+		public StackTraceElement [] getStackTrace()	Returns an array containing each element on the stack trace. The element at
+						index 0 represents the top of the call stack, and the last element in the array represents the method at the bottom of the call stack.
+		public Throwable fillInStackTrace()	Fills the stack trace of this Throwable object with the current stack trace, adding
+											to any previous information in the stack trace.
+	Catching Exceptions
+		A method catches the exception using the combination of try catch blocks
+		try catch placed around the code that may genrate exception
+		code within the try catch is referred as protected code
+		Code:
+			try
+			{
+			 //Protected code
+			}catch(ExceptionName e1)
+			{
+			 //Catch block
+			} 					
+		The code which is prone to exceptions is placed in the try block. When an exception occurs, that exception occurred is handled by catch block associated with it. Every try block should
+				be immediately followed either by a catch block or finally block.	
+		A catch statement involves declaring the type of exception you are trying to catch. If an exception occurs in protected code, the catch block (or blocks) that follows the try is
+			checked. If the type of exception that occurred is listed in a catch block, the exception is passed to the catch block much as an argument is passed into a method parameter.	
+		Try block can be followed by multiple catch blocks
+		The Throws/Throw Keywords 
+				If a method does not handle a checked exception, the method must declare it using the throws keyword. The throws keyword appears at the end of a method's signature.
+				You can throw an exception, either a newly instantiated one or an exception that you just caught, by using the throw keyword.	
+			Try to understand the difference between throws and throw keywords, throws is used to postpone the handling of a checked exception and throw is used to invoke an exception explicitly
+			import java.io.*;
+			public class className
+			{
+			 public void deposit(double amount) throws RemoteException
+			 {
+			 // Method implementation
+			 throw new RemoteException();
+			 }
+			 //Remainder of class definition
+			}
+	The Finally Block
+			The finally block follows a try block or a catch block. A finally block of code always executes, irrespective of occurrence of an Exception.
+			Using a finally block allows you to run any cleanup-type statements that you want to execute, no matter what happens in the protected code.		
+	Note the following:
+		A catch clause cannot exist without a try statement.
+		It is not compulsory to have finally clauses whenever a try/catch block is present.
+		The try block cannot be present without either catch clause or finally clause.
+		Any code cannot be present in between the try, catch, finally blocks		
+	The try with Resources
+		when we use any resources like streams, connections, etc. we have to close them explicitly using finally block
+	Ex:
+		import java.io.File;
+		import java.io.FileReader;
+		import java.io.IOException;
+		public class ReadData_Demo {
+		 public static void main(String args[]){
+		 FileReader fr=null;
+		 try{
+		 File file=new File("file.txt");
+		 fr = new FileReader(file); char [] a = new char[50];
+		 fr.read(a); // reads the content to the array
+		 for(char c : a)
+		 System.out.print(c); //prints the characters one by one
+		 }catch(IOException e){
+		 e.printStackTrace();
+		 }
+		 finally{
+		 try{
+		 fr.close();
+		 }catch(IOException ex){
+		 ex.printStackTrace();
+		 }
+		 }
+		 }
+		}
+		try-with-resources,
+			 also referred as automatic resource management, is a new exception handling mechanism that was introduced in Java 7, which automatically closes
+			the resources used within the try catch block. To use this statement, you simply need to declare the required resources within the
+			parenthesis, and the created resource will be closed automatically at the end of the block.
+			Ex:
+				try(FileReader fr=new FileReader("file path"))
+				 {
+				 //use the resource
+				 }catch(){
+				 //body of catch
+				 }
+				 }
+		Notes:
+			To use a class with try-with-resources statement it should implement AutoCloseable interface and the close() method of it gets invoked automatically at runtime.
+			You can declare more than one class in try-with-resources statement.
+			While you declare multiple classes in the try block of try-with-resources statement these classes are closed in reverse order.
+			Except the deceleration of resources within the parenthesis everything is the same as normal try/catch block of a try block.
+			The resource declared in try gets instantiated just before the start of the try-block.
+			The resource declared at the try block is implicitly declared as final.
+		UserDefinedExceptions
+			To implement own expetion classes we need to follow some rules
+				All exceptions must be a child of Throwable.
+				If you want to write a checked exception that is automatically enforced by the Handle or Declare Rule, you need to extend the Exception class.
+				If you want to write a runtime exception, you need to extend the RuntimeException class.
+			You just need to extend the predefined Exception class to create your own Exception.
+			These are considered to be checked exceptions. The following InsufficientFundsException class is a user-defined exception that extends the
+				Exception class, making it a checked exception. An exception class is like any other class, containing useful fields and methods.
+		Ex:
+			// File Name InsufficientFundsException.java
+				import java.io.*;
+				public class InsufficientFundsException extends Exception
+				{
+				 private double amount;
+				 public InsufficientFundsException(double amount)
+				 {
+				 this.amount = amount;
+				 }
+				 public double getAmount()
+				 {
+				 return amount;
+				 }
+				}
+		Test UserDefinedException Class
+		Ex:
+			// File Name CheckingAccount.java
+				import java.io.*;
+				public class CheckingAccount
+				{
+				 private double balance;
+				 private int number;
+				
+				 public CheckingAccount(int number)
+				 {
+				 this.number = number;
+				 }
+				
+				 public void deposit(double amount)
+				 {
+				 balance += amount;
+				 }
+				
+				 public void withdraw(double amount) throws InsufficientFundsException
+				 {
+				 if(amount <= balance)
+				 {
+				 balance -= amount;
+				 }
+				 else
+				 {
+				 double needs = amount - balance;
+				 throw new InsufficientFundsException(needs);
+				 }
+				 }
+				
+				 public double getBalance()
+				 {
+				 return balance;
+				 }
+				}
+		Ex:
+			//File Name BankDemo.java
+				public class BankDemo
+				{
+						public static void main(String [] args)
+						{
+								CheckingAccount c = new CheckingAccount(101);
+								System.out.println("Depositing $500...");
+								c.deposit(500.00);
+								
+								try
+								{
+									System.out.println("\nWithdrawing $100...");
+									c.withdraw(100.00);
+									System.out.println("\nWithdrawing $600...");
+									c.withdraw(600.00);
+								}
+								catch(InsufficientFundsException e)
+								{
+									System.out.println("Sorry, but you are short $" + e.getAmount());
+									e.printStackTrace();
+								}
+						}
+				}		
+Common Exceptions
+		JVM Exceptions: 
+			These are exceptions/errors that are exclusively or logically thrown by the JVM. Examples: NullPointerException, ArrayIndexOutOfBoundsException, ClassCastException.
+		Programmatic Exceptions: 
+			These exceptions are thrown explicitly by the application or the API programmers. Examples: IllegalArgumentException IllegalStateException.		
+Summary
+	A program can use exceptions to indicate that an error occurred. 
+	To throw an exception, use the throw statement and provide it with an exception object — a descendant of Throwable — to provide information about the specific error that occurred.
+	A method that throws an uncaught, checked exception must include a throws clause in its declaration.
+
+	A program can catch exceptions by using a combination of the try, catch, and finally blocks.
+
+	The try block identifies a block of code in which an exception can occur.
+	The catch block identifies a block of code, known as an exception handler, that can handle a particular type of exception.
+	The finally block identifies a block of code that is guaranteed to execute, and is the right place to close files, recover resources, and otherwise clean up after the code enclosed in the try block.
+	The try statement should contain at least one catch block or a finally block and may have multiple catch blocks.
+	
+	The class of the exception object indicates the type of exception thrown. 
+	The exception object can contain further information about the error, including an error message. 
+	With exception chaining, an exception can point to the exception that caused it, which can in turn point to the exception that caused it, and so on.			
